@@ -34,7 +34,11 @@ Advanced patterns and state management:
 - The problem of state in functional programming
 - Why stateful code breaks with JIT compilation
 - Implementing stateful patterns (e.g., counters) in JAX
-- Best practices for managing state in neural networks
+- **PyTrees** - JAX's way of handling complex data structures
+  - Understanding PyTree structure and leaves
+  - Manipulating PyTrees with `tree.map`
+  - Handling gradients for models with many parameters
+- Foundation for building neural networks in JAX
 
 ## Topics Covered
 
@@ -45,6 +49,7 @@ Advanced patterns and state management:
 - ✅ Random number generation with PRNG keys
 - ✅ Pure functional programming patterns
 - ✅ State management in functional style
+- ✅ PyTrees for complex data structures
 - ✅ Common gotchas and how to avoid them
 - 🔄 Neural network implementations (in progress)
 - 🔄 GPU/TPU acceleration patterns (in progress)
