@@ -41,14 +41,21 @@ Advanced patterns and state management:
 - Foundation for building neural networks in JAX
 
 ### 4. [JAX MLP](4_JAX_MLP.ipynb)
-Building a Multi-Layer Perceptron from scratch:
+Building and training a Multi-Layer Perceptron from scratch:
 - Initializing neural network parameters with `init_mlp_params`
 - **He Initialization** - proper weight initialization for deep networks
   - Understanding exploding and vanishing activations
   - Why `sqrt(2/n_in)` scaling matters
   - Keeping variance stable across layers
-- Organizing model parameters as PyTrees
-- Explicit state management for neural network training
+- **Forward propagation** with ReLU activation
+- **Loss function** - Mean Squared Error (MSE)
+- **Gradient descent** - automatic differentiation with `jax.grad()`
+- **Training loop** - iterative parameter updates
+- **PyTree magic** - updating all parameters with `tree.map()`
+- Practical examples: learning y = x² and y = sin(3x)
+
+![MLP Training Result](jax_mlp_pred_sin.png)
+*Successfully trained MLP learning a sine function*
 
 ## Topics Covered
 
@@ -62,7 +69,11 @@ Building a Multi-Layer Perceptron from scratch:
 - ✅ PyTrees for complex data structures
 - ✅ Common gotchas and how to avoid them
 - ✅ Neural network parameter initialization (He initialization)
-- 🔄 MLP forward/backward pass and training (in progress)
+- ✅ MLP forward propagation with ReLU activation
+- ✅ Loss functions (Mean Squared Error)
+- ✅ Gradient descent optimization with `tree.map()`
+- ✅ Complete training loops
+- 🔄 Advanced architectures and optimizers (in progress)
 - 🔄 GPU/TPU acceleration patterns (in progress)
 
 ## Setup
