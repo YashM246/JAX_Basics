@@ -40,6 +40,16 @@ Advanced patterns and state management:
   - Handling gradients for models with many parameters
 - Foundation for building neural networks in JAX
 
+### 4. [JAX MLP](4_JAX_MLP.ipynb)
+Building a Multi-Layer Perceptron from scratch:
+- Initializing neural network parameters with `init_mlp_params`
+- **He Initialization** - proper weight initialization for deep networks
+  - Understanding exploding and vanishing activations
+  - Why `sqrt(2/n_in)` scaling matters
+  - Keeping variance stable across layers
+- Organizing model parameters as PyTrees
+- Explicit state management for neural network training
+
 ## Topics Covered
 
 - ✅ Basic JAX operations and NumPy compatibility
@@ -51,7 +61,8 @@ Advanced patterns and state management:
 - ✅ State management in functional style
 - ✅ PyTrees for complex data structures
 - ✅ Common gotchas and how to avoid them
-- 🔄 Neural network implementations (in progress)
+- ✅ Neural network parameter initialization (He initialization)
+- 🔄 MLP forward/backward pass and training (in progress)
 - 🔄 GPU/TPU acceleration patterns (in progress)
 
 ## Setup
