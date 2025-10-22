@@ -57,6 +57,23 @@ Building and training a Multi-Layer Perceptron from scratch:
 ![MLP Training Result](jax_mlp_pred_sin.png)
 *Successfully trained MLP learning a sine function*
 
+### 5. [JAX Custom PyTrees](5_JAX_Custom_PyTrees.ipynb)
+Understanding and creating custom PyTree nodes:
+- Why JAX can't traverse custom classes by default
+- **Custom PyTree registration** with `register_pytree_node()`
+- Implementing `flatten` and `unflatten` functions
+  - Children (trainable parameters) vs auxiliary data (metadata)
+  - How JAX decomposes and reconstructs objects
+- **Common gotcha**: Tuples as PyTree containers vs leaves
+  - Understanding tree structure of shape tuples
+  - Solutions: `is_leaf` parameter and direct mapping
+- Foundation for building custom neural network layers
+- Essential for creating reusable ML components
+
+### 6. [JAX Parallelism](6_JAX_Parallelism.ipynb)
+Parallel computing patterns in JAX:
+- Coming soon...
+
 ## Topics Covered
 
 - ✅ Basic JAX operations and NumPy compatibility
@@ -73,8 +90,11 @@ Building and training a Multi-Layer Perceptron from scratch:
 - ✅ Loss functions (Mean Squared Error)
 - ✅ Gradient descent optimization with `tree.map()`
 - ✅ Complete training loops
+- ✅ Custom PyTree registration for custom classes
+- ✅ Flatten/unflatten functions for PyTree nodes
+- ✅ PyTree gotchas (tuples as containers vs leaves)
+- 🔄 Parallel computing with `pmap` and `vmap` (in progress)
 - 🔄 Advanced architectures and optimizers (in progress)
-- 🔄 GPU/TPU acceleration patterns (in progress)
 
 ## Setup
 
