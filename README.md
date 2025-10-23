@@ -72,6 +72,19 @@ Understanding and creating custom PyTree nodes:
 
 ### 6. [JAX Parallelism](6_JAX_Parallelism.ipynb)
 Parallel computing patterns in JAX:
+- **GPU limitations on Windows** - native support via WSL2 only
+- Understanding device detection with `jax.devices()` and `jax.local_device_count()`
+- **vmap (vectorized map)** - automatic vectorization for batches
+  - How `in_axes` controls mapping behavior
+  - Efficient batch processing without explicit loops
+- **pmap (parallel map)** - multi-device parallel execution
+  - Running computations across multiple GPUs/TPUs
+  - Zero cross-device communication for independent operations
+- **1D Convolution example** - practical parallel computing demonstration
+- Using `repr()` for debugging object representations
+
+### 7. [JAX Simple Parallel Training](7_JAX_Simple_Parallel_Training.ipynb)
+Practical parallel training patterns:
 - Coming soon...
 
 ## Topics Covered
@@ -93,7 +106,11 @@ Parallel computing patterns in JAX:
 - ✅ Custom PyTree registration for custom classes
 - ✅ Flatten/unflatten functions for PyTree nodes
 - ✅ PyTree gotchas (tuples as containers vs leaves)
-- 🔄 Parallel computing with `pmap` and `vmap` (in progress)
+- ✅ Automatic vectorization with `vmap`
+- ✅ Multi-device parallelism with `pmap`
+- ✅ Understanding `in_axes` for batch processing
+- ✅ Cross-device communication with `psum`
+- 🔄 Parallel training patterns (in progress)
 - 🔄 Advanced architectures and optimizers (in progress)
 
 ## Setup
@@ -108,8 +125,15 @@ pip install matplotlib
 
 For GPU support:
 ```bash
+# Linux/WSL2 only - Windows native GPU not supported
 pip install --upgrade "jax[cuda12]"
 ```
+
+**Note on Windows GPU Support:**
+- JAX does **not** natively support CUDA on Windows
+- For GPU acceleration on Windows, use **WSL2** (Windows Subsystem for Linux)
+- Alternatively, use Google Colab for free GPU/TPU access
+- CPU-only installation works fine for learning JAX concepts
 
 ## Key Takeaways
 
