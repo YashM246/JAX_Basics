@@ -1,1 +1,3 @@
 env
+train_data_mnist
+test_data_mnist
