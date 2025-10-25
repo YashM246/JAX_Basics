@@ -108,6 +108,29 @@ Complete MLP implementation for MNIST classification:
 - MNIST dataset preparation
 - Batched predictions with `vmap`
 
+### 9. [JAX FLAX](9_JAX_FLAX.ipynb)
+Introduction to high-level neural network libraries for JAX:
+- **FLAX** - Google Research's flexible NN library
+  - Module-based architecture (similar to PyTorch)
+  - Initialization pattern: `init()` and `init_with_output()`
+  - Apply pattern: `model.apply(params, x)` for forward pass
+  - FrozenDict for immutable parameters
+- **Haiku** - DeepMind's NN library with transform pattern
+- **Optax** - JAX optimizer library by DeepMind
+  - SGD, Adam, and other optimizers
+  - Pattern: `optimizer.init()` then `optimizer.update()`
+- **Custom models** with `nn.Module`
+  - Using `setup()` or `@nn.compact` decorator
+  - Defining trainable parameters with `self.param()`
+  - Managing non-trainable state with `self.variable()`
+- **Multiple state collections**
+  - `params` - trainable parameters
+  - `batch_stats` - non-trainable variables (BatchNorm)
+  - `dropout` - RNG keys for stochastic layers
+- **Training vs evaluation mode** for Dropout and BatchNorm
+- Complete linear regression example with FLAX
+- Building custom MLP from scratch with FLAX
+
 ## Topics Covered
 
 - ✅ Basic JAX operations and NumPy compatibility
@@ -136,7 +159,13 @@ Complete MLP implementation for MNIST classification:
 - ✅ Log-softmax for numerical stability
 - ✅ MNIST dataset integration with JAX
 - ✅ Custom data loading with PyTorch DataLoader
-- 🔄 Complete MNIST training loop (in progress)
+- ✅ FLAX neural network library (nn.Module, init, apply)
+- ✅ Optax optimizers (SGD, Adam, etc.)
+- ✅ Managing trainable and non-trainable state in FLAX
+- ✅ Custom FLAX models with @nn.compact decorator
+- ✅ FrozenDict for immutable parameters
+- ✅ BatchNorm and Dropout with FLAX
+- 🔄 Complete MNIST training loop with FLAX (in progress)
 - 🔄 Advanced architectures and optimizers (in progress)
 
 ## Setup
